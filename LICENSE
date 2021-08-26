@@ -360,7 +360,10 @@ async def 명령어(ctx):
 !목록초기화 -> 목록에 추가된 모든 노래를 지웁니다.
 \n!대기열추가 [노래] -> 노래를 대기열에 추가합니다.
 !대기열삭제 [숫자] -> 대기열에서 입력한 숫자에 해당하는 노래를 지웁니다.""", color = 0x00ff00))            
-
+!롤[닉네임] -> 전적사이트에서 정보를 가져옵니다.
+!레식전적[닉네임] -> 전적사이트에서 정보를 가져옵니다.
+!메이플[닉네임] -> 전적사이트에서 정보를 가져옵니다.
+!롤토[닉네임] -> 전적사이트에서 정보를 가져옵니다.
 @bot.command()
 async def 반복재생(ctx, *, msg):
       
@@ -432,7 +435,7 @@ async def on_ready():
 
 async def on_message(message):
 
-    if message.content.startswith('!티어'):
+    if message.content.startswith('!롤'):
 
         start = time.time()
     
@@ -1014,7 +1017,7 @@ async def on_message(message): # on_message() event : when the bot has recieved 
     print(message.content)
     if message.author == client.user:
         return
-    if message.content.startswith("!롤체전적"):
+    if message.content.startswith("!롤토"):
         try:
             krTFTProfileURL = 'https://lolchess.gg/profile/kr/'
             playerNickname = ''.join((message.content).split(' ')[1:])
